@@ -45,15 +45,7 @@ outputs:
         - ldas-tools-al
         - ldas-tools-framecpp >={{ ldas_tools_framecpp_version }}
     test:
-      requires:
-        - pkg-config
-      commands:
-        - pkg-config --print-errors --exact-version {{ version }} gdsframeio
-        - fdir -h
-        - fextract -h
-        - finfo -h
-        - framedump -h  # [not osx]
-        - fsettime -h
+      script: test-gds-frameio-base.sh
     about:
       home: https://wiki.ligo.org/Computing/DASWG/DMT
       dev_url: https://git.ligo.org/gds/gds.git
