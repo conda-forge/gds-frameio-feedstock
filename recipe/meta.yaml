@@ -15,7 +15,7 @@ source:
   sha256: 4ef5f52a68016abb252df2afb7bba57300eb3ccd795975d07e5ffb5a723b9fca
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
 
 outputs:
@@ -37,8 +37,8 @@ outputs:
         - gds-base >={{ gds_base_version }}
         - gds-base-gdstrig >={{ gds_base_version }}
         - gds-lsmp >={{ gds_lsmp_version }}
-        - ldas-tools-al
-        - ldas-tools-framecpp >={{ ldas_tools_framecpp_version }}
+        - ldas-tools-al 2.6.4
+        - ldas-tools-framecpp 2.7.0
       run:
         - gds-base >={{ gds_base_version }}
         - gds-lsmp >={{ gds_lsmp_version }}
