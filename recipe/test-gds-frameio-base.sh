@@ -18,8 +18,11 @@ finfo ${GWF}
 # dump ascii
 fextract Z0:RAMPED_INT_2U_1 ${GWF} data.txt
 
-# dump frame
-framedump ${GWF}
+# dump frame (only on Linux)
+FrameDump -i ${GWF}
+if [ "$(uname)" = "Linux" ]; then
+	framedump ${GWF}
+fi
 
 # set time
 fsettime .
