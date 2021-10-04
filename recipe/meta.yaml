@@ -16,7 +16,7 @@ source:
   sha256: 4ef5f52a68016abb252df2afb7bba57300eb3ccd795975d07e5ffb5a723b9fca
 
 build:
-  number: 2
+  number: 3
   skip: true  # [win]
 
 outputs:
