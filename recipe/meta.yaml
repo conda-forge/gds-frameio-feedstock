@@ -14,6 +14,8 @@ package:
 source:
   url: https://software.igwn.org/sources/source/{{ name }}-{{ version }}.tar.gz
   sha256: ea465bdd56af1281fec772ad8420688c1a23f7a1cf28a36ba4766b454d3e0db9
+  patches:
+    - no-zlib.patch
 
 build:
   number: 0
