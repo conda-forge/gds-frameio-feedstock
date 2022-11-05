@@ -1,8 +1,8 @@
 {% set name = "gds-frameio" %}
-{% set version = "2.19.6" %}
+{% set version = "2.19.7" %}
 
 # dependencies
-{% set gds_base_version = "2.19.8" %}
+{% set gds_base_version = "2.19.10" %}
 {% set gds_lsmp_version = "2.19.8" %}
 {% set ldas_tools_al_version = "2.6.4" %}
 {% set ldas_tools_framecpp_version = "2.5.8" %}
@@ -13,10 +13,12 @@ package:
 
 source:
   url: https://software.igwn.org/sources/source/{{ name }}-{{ version }}.tar.gz
-  sha256: 6abc739c5d97ff8ecb9d36cba9b2ccd2267c5693ec6ed64068f576c32ee9a189
+  sha256: ea465bdd56af1281fec772ad8420688c1a23f7a1cf28a36ba4766b454d3e0db9
+  patches:
+    - no-zlib.patch
 
 build:
-  number: 2
+  number: 0
   skip: true  # [win]
 
 outputs:
@@ -32,6 +34,7 @@ outputs:
       build:
         - {{ compiler('cxx') }}
         - make
+        - gnuconfig  # [unix]
         - pkg-config
       host:
         - boost-cpp
