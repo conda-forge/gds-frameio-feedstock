@@ -2,7 +2,7 @@
 {% set version = "2.19.7" %}
 
 # dependencies
-{% set gds_base_version = "2.19.8" %}
+{% set gds_base_version = "2.19.10" %}
 {% set gds_lsmp_version = "2.19.8" %}
 {% set ldas_tools_al_version = "2.6.4" %}
 {% set ldas_tools_framecpp_version = "2.5.8" %}
