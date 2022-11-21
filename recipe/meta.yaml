@@ -1,5 +1,5 @@
 {% set name = "gds-frameio" %}
-{% set version = "2.19.7" %}
+{% set version = "3.0.0" %}
 
 # dependencies
 {% set gds_base_version = "2.19.10" %}
@@ -13,7 +13,7 @@ package:
 
 source:
   url: https://software.igwn.org/sources/source/{{ name }}-{{ version }}.tar.gz
-  sha256: ea465bdd56af1281fec772ad8420688c1a23f7a1cf28a36ba4766b454d3e0db9
+  sha256: 259f7d4073a61e2804c36dff79e5c5458b43299ebc778f291e5a84ee48f0bdec
   patches:
     - no-zlib.patch
 
