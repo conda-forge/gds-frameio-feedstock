@@ -29,7 +29,7 @@ outputs:
         # header needed only
         - gds-base-gdstrig
       run_exports:
-        - {{ pin_subpackage("gds-frameio-base", max_pin="x.x") }}
+        - {{ pin_subpackage("gds-frameio-base", max_pin="x") }}
     requirements:
       build:
         - {{ compiler('cxx') }}
