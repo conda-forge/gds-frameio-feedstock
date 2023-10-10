@@ -5,7 +5,7 @@
 {% set gds_base_version = "3.0.0" %}
 {% set gds_lsmp_version = "3.0.0" %}
 {% set ldas_tools_al_version = "2.6.4" %}
-{% set ldas_tools_framecpp_version = "2.5.8" %}
+{% set ldas_tools_framecpp_version = "2.5.8,<3.0.0a0" %}
 
 package:
   name: {{ name|lower }}
@@ -16,13 +16,17 @@ source:
   sha256: 259f7d4073a61e2804c36dff79e5c5458b43299ebc778f291e5a84ee48f0bdec
 
 build:
-  number: 0
+  error_overdepending: true
+  error_overlinking: true
+  number: 1
   skip: true  # [win]
 
 outputs:
   - name: gds-frameio-base
     script: build-base.sh
     build:
+      error_overdepending: true
+      error_overlinking: true
       ignore_run_exports:
         # header needed only
         - gds-base-gdstrig
@@ -35,7 +39,7 @@ outputs:
         - gnuconfig  # [unix]
         - pkg-config
       host:
-        - boost-cpp
+        - libboost-headers
         - gds-base >={{ gds_base_version }}
         - gds-base-gdstrig >={{ gds_base_version }}
         - gds-lsmp >={{ gds_lsmp_version }}
