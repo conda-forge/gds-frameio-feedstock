@@ -1,11 +1,11 @@
-About gds-frameio
-=================
+About gds-frameio-feedstock
+===========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/gds-frameio-feedstock/blob/main/LICENSE.txt)
 
 Home: https://wiki.ligo.org/Computing/DASWG/DMT
 
 Package license: GPL-2.0-only
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/gds-frameio-feedstock/blob/main/LICENSE.txt)
 
 Summary: GDS package frame I/O libraries
 
@@ -18,14 +18,7 @@ Current build status
 ====================
 
 
-<table><tr>
-    <td>Travis</td>
-    <td>
-      <a href="https://app.travis-ci.com/conda-forge/gds-frameio-feedstock">
-        <img alt="linux" src="https://img.shields.io/travis/com/conda-forge/gds-frameio-feedstock/main.svg?label=Linux">
-      </a>
-    </td>
-  </tr>
+<table>
     
   <tr>
     <td>Azure</td>
