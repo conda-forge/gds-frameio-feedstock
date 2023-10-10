@@ -16,7 +16,7 @@ source:
   sha256: 259f7d4073a61e2804c36dff79e5c5458b43299ebc778f291e5a84ee48f0bdec
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
 
 outputs:
@@ -35,7 +35,7 @@ outputs:
         - gnuconfig  # [unix]
         - pkg-config
       host:
-        - boost-cpp
+        - libboost-headers
         - gds-base >={{ gds_base_version }}
         - gds-base-gdstrig >={{ gds_base_version }}
         - gds-lsmp >={{ gds_lsmp_version }}
