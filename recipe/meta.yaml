@@ -16,6 +16,8 @@ source:
   sha256: 259f7d4073a61e2804c36dff79e5c5458b43299ebc778f291e5a84ee48f0bdec
 
 build:
+  error_overdepending: true
+  error_overlinking: true
   number: 1
   skip: true  # [win]
 
@@ -23,6 +25,8 @@ outputs:
   - name: gds-frameio-base
     script: build-base.sh
     build:
+      error_overdepending: true
+      error_overlinking: true
       ignore_run_exports:
         # header needed only
         - gds-base-gdstrig
