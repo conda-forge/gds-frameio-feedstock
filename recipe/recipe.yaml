@@ -1,0 +1,72 @@
+schema_version: 1
+
+context:
+  name: gds-frameio
+  version: 3.0.1
+  # dependencies
+  gds_base_version: 3.0.0
+  gds_lsmp_version: 3.0.0
+  ldas_tools_al_version: 2.6.4
+  ldas_tools_framecpp_version: 2.5.8,<3.0.0a0
+
+recipe:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://software.igwn.org/sources/source/${{ name }}-${{ version }}.tar.gz
+  sha256: c04ace68dc36a1823e55329ecec31bc39254f86b9a3d596ab2fa6fcd0fbcb289
+
+build:
+  number: 2
+  skip:
+    - win
+
+outputs:
+  - package:
+      name: gds-frameio-base
+    build:
+      dynamic_linking:
+        overdepending_behavior: error
+        overlinking_behavior: error
+      script:
+        file: build-base.sh
+    requirements:
+      build:
+        - ${{ compiler('cxx') }}
+        - ${{ stdlib('c') }}
+        - gnuconfig
+        - make
+        - pkg-config
+      host:
+        - libboost-headers
+        - gds-base >=${{ gds_base_version }}
+        - gds-base-gdstrig >=${{ gds_base_version }}
+        - gds-lsmp >=${{ gds_lsmp_version }}
+        - ldas-tools-al >=${{ ldas_tools_al_version }}
+        - ldas-tools-framecpp >=${{ ldas_tools_framecpp_version }}
+      run_exports:
+        - ${{ pin_subpackage("gds-frameio-base", upper_bound="x") }}
+      ignore_run_exports:
+        by_name:
+          - gds-base-gdstrig
+    tests:
+      - script: test-gds-frameio-base.sh
+    about:
+      summary: GDS package frame I/O libraries
+      description: |
+        GDS frame I/O libraries and utilities based on FrameCPP
+
+about:
+  summary: GDS package frame I/O libraries
+  description: |
+    GDS frame I/O libraries and utilities based on FrameCPP
+  homepage: https://wiki.ligo.org/Computing/DASWG/DMT
+  repository: https://git.ligo.org/gds/gds.git
+  license: GPL-2.0-only
+  license_file: COPYING
+
+extra:
+  recipe-maintainers:
+    - duncanmmacleod
+    - emaros
